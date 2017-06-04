@@ -1,0 +1,21 @@
+
+
+
+@media (min-width: 768px) {
+
+    .navbar-nav>li>a {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    nav.main-nav {
+        /*margin-top: 70px;*/
+        height: 38px;
+        min-height: 38px;
+    }
+
+    div.main-logo img {
+        margin-left: 20px;
+        max-height: 70px;
+    }
+}
