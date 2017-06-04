@@ -20,3 +20,12 @@ img.fb-logo {
   max-height: 30px;
   max-width: auto;
 }
+div.less-padding {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+div.list-item-image img {
+  height: 150px;
+  width: auto;
+}
