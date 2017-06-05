@@ -17,6 +17,44 @@
   </head>
 
   <body>
+
+        <script>
+            function myFunction() {
+
+               var input, filter, id, h3;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                var same = document.getElementsByClassName("panel panel-default");
+                var i;
+                for (i = 0; i < same.length; i++) {
+                  h3 = same[i].getElementsByTagName("h3")[0];
+                    
+                    var x = h3.innerHTML.toUpperCase();
+                    id = document.getElementById(h3.innerHTML);
+                     
+                    if (h3.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                      
+                  //h2 = document.getElementsByTagName("h2")[0];
+                        id.style.display="";
+                    } else {
+                        id.style.display="none";
+                    } 
+                }           
+            }
+
+                function run() {
+                    //  document.getElementById("srt").value = document.getElementById("sel1").value;
+                    var val = document.getElementById("sel1").value;
+
+                    var itemlist = document.getElementsByClassName("panel panel-default");
+                    var i;
+                    for (i = 0; i < itemlist.length; i++) {
+                       document.getElementById("srt").value = itemlist[i].name;
+                    }
+
+                  }
+        </script>
+
     <div class="main-logo col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
       <a href="./index.html">
         <img class="image-responsive" src="img/logo.png"/>
@@ -53,20 +91,23 @@
           <div class="row filters">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group">
-                  <select class="form-control" id="sel1">
+                  <select class="form-control" id="sel1" onchange="run()">
                     <option value="">Избери регион</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
+                    <option>Пирин</option>
+                    <option>Родопи</option>
+                    <option>Стара планина</option>
+                    <option>Рила</option>
                   </select>
+
+                  TextBox1<br>
+<input type="text" id="srt" placeholder="get value on option select"><br>
                 </div>
               </div>
 
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group">
                   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 less-padding">
-                    <input type="text" class="form-control" placeholder="Потърси по име" id="search">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 less-padding">
                     <button type="button" class="btn btn-default">Търси</button>
@@ -78,11 +119,11 @@
 
 
         <div class="item-list">
-          <div class="panel panel-default">
+          <div class="panel panel-default" id="Хижа Безбог" name="Пирин">
             <div class="panel-body">
               <div class="row">
                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
-                  <img class="image-repsonsive" src="img/hiji/1.jpg"/>
+                  <img class="img-responsive" src="img/hiji/1.jpg">
                 </div>
 
                 <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
@@ -97,6 +138,215 @@
               </div>
             </div>
           </div>
+
+          <div class="panel panel-default" id="Хижа Бъндерица" name="Пирин">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/bunderica.jpg" >
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Бъндерица</h3>
+                  <p>
+                      Разположена е на левия бряг на р.Бъндерица. Новата хижа е масивна триетажна сграда с капацитет 95 места с външни и вътрешни санитарни възли и умивални. Електрифицирана е , отоплението е централно. Старата хижа е масивна двуетажна сграда с капацитет 73 места с външни санитарни възли и умивални. Електрифицирана и водоснабдена, има туристическа кухня и столова. В района се ползват и бунгала с капацитет 30 легла. Санитарните възли и умивални са външни. Електрифицирани са , отоплението е с електрически печки. Има паркинг. 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Пирин">
+          <div class="panel panel-default" id="Хижа Демяница">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/demianitsa1.jpg">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Демяница</h3>
+                  <p>
+
+                    Разположена е на водослива на реките Стражишка, Валявишка и Василашка, сред иглолистна гора. Предаставлява масивна двуетажна сграда. Допълнително има и 14 бунгала. Общият капацитет е 217 места. Разполага с туристическа кухня, столова и лафка. Санитарните възли са външни. Хижата е електрифицирана от агрегат и ВЕЦ и водоснабдена, отоплението е с печки на твърдо гориво. 
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Пирин">
+          <div class="panel panel-default" id="Хижа Гоце Делчев">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/gocedelchev.jpg">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Гоце Делчев</h3>
+                  <p>
+                    Разположена е в м.Логовото. Предаставлява масивна двуетажна сграда с капацитет 36 места с вътрешни санитарни възли и бани. Бунгалата са с капацитет 70 места с външни санитарни възли. Хижата е електрифицирана и водоснабдена, отоплението е с печки на твърдо гориво.
+                    Има паркинг за автомобили. 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Родопи">
+          <div class="panel panel-default" id="Хижа Аида">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/aida.jpg">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Аида</h3>
+                  <p>
+                      Намира се в рида Мечковец, в подножието на едноименния връх. Представлява масивна двуетажна сграда с капацитет 45 места с външни санитарни възли и вътрешни умивални и бани. Сградата е водоснабдена и електрифицирана, отоплението е с печки на ток и на твърдо гориво. Разполага с туристическа кухня и столова. Пътят до хижата е асфалтиран, има паркинг. 
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Родопи">
+          <div class="panel panel-default" id="Хижа Белите Брези">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/belitebrezi.jpg">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Белите Брези</h3>
+                  <p>
+                      Намира се в едноименната местност, източно от гр.Ардино. Представлява масивна двуетажна сграда с капацитет 31 места с вътрешни санитарни възли и бани. Сградата е водоснабдена, електрифицирана, отоплението е с печки на твърдо гориво. Разполага с туристическа кухня, столова и лафка. Пътят до хижата е асфалтиран, има паркинг. 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Родопи">
+          <div class="panel panel-default" id="Хижа Безово">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/bezovo.jpg">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Безово</h3>
+                  <p>
+                      Намира се в м.Безово. Представлява масивна двуетажна сграда с капацитет 40 места
+с външни санитарни възли и умивални. Хижата е водоснабдена и електрифицирана,
+отоплението е с печки на твърдо гориво. Разполага с туристическа кухня и столова. 
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Стара планина">
+          <div class="panel panel-default" id="Хижа Бачо Киро">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/bachokiro.JPG">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Бачо Киро</h3>
+                  <p>
+                      Разположена е край Дряновския манастир. Представлява масивна двуетажна сграда с капацитет 85 места с етажни санитарни възли и бани. Сградата е водоснабдена и електрифицирана, с централно отопление. Хижата разполага с безжичен интернет. Разполага с ресторант, лавка и кафе-аперитив. Пътят до хижата е асфалтиран, има паркинг. 
+ 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default" id="Хижа Бенковски">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/benkovski.jpg">
+                </div>
+
+                <div class="Стара планина">
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Бенковски</h3>
+                  <p>
+                    Намира се в югозападното подножие на вр.Ушите. Представлява двуетажна постройка с капацитет 60 места с вътрешни санитарни възли и умивални. Сградата е водоснабдена, електрифицирана от агрегат и ВЕЦ, отоплението е с печки на твърдо гориво. Разполага с туристическа кухня, столова и лафка. 
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Рила">
+          <div class="panel panel-default" id="Хижа Мальовица">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/maliovica.jpg">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Мальовица</h3>
+                  <p>
+                      Намира се в долината на р.Мальовица. Общият капацитет на хижата е 125 места. Водоснабдена, електрифицирана, отоплението е електрическо. Районът разполага със ски-писта, съоръжена с влек. Околностите предлагат много добри условия за алпинизъм. Хижата е пункт от европейския маршрут "Е-4". 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Рила">
+          <div class="panel panel-default" id="Хижа Отовица">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/otovitza.jpg">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Отовица</h3>
+                  <p>
+                      Разположена е в долината на р.Отовица. Представлява масивна триетажна сграда с капацитет 44 места в стаи със собствени санитарни възли и умивални. Хижата е водоснабдена, електрифицирана, с локално парно отопление. Разполага с ресторант и кафе-сладкарница. Хижата е основно обновена. 
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="Рила">
+          <div class="panel panel-default" id="Хижа Пионерска">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-3 list-item-image">
+                  <img class="img-responsive" src="img/hiji/pionerska.jpg">
+                </div>
+
+                <div class="col-xl-10 col-lg-9 col-md-9 col-sm-9 col-xs-9 list-item-desc">
+                  <h3>Хижа Пионерска</h3>
+                  <p>
+                      Разположена е в м.Голямото селище, Северозападна Рила. Представлява масивна триетажна сграда с капацитет 76 места с етажни санитарни възли и умивални. Хижата е водоснабдена, електрифицирана, с централно отопление. Разполага с туристическа кухня и столова. Има оформено място за паркинг. До хижата се намира ски-писта, съоръжена с влек. . 
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
         </div>
       </div>
