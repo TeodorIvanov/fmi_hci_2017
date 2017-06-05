@@ -261,6 +261,12 @@
 
 <script type="text/javascript">
 $(function() {
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
     $('#sel1').on('change', function(e){
         var region = $(this).val();
         $('div.panel-default').addClass('hidden');
@@ -269,6 +275,9 @@ $(function() {
           $('[attr-region]').removeClass('hidden');
         }
     });
+
+    var region = getParameterByName('region');
+    $('#sel1').val(region).trigger('change');
 });
 </script>
 
