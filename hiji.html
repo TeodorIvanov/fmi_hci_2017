@@ -119,6 +119,7 @@
 
 
         <div class="item-list">
+          <div attr-region="Пирин">
           <div class="panel panel-default" id="Хижа Безбог" name="Пирин">
             <div class="panel-body">
               <div class="row">
@@ -156,7 +157,7 @@
             </div>
           </div>
 
-          <div class="Пирин">
+
           <div class="panel panel-default" id="Хижа Демяница">
             <div class="panel-body">
               <div class="row">
@@ -176,7 +177,6 @@
             </div>
           </div>
 
-          <div class="Пирин">
           <div class="panel panel-default" id="Хижа Гоце Делчев">
             <div class="panel-body">
               <div class="row">
@@ -194,8 +194,9 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="Родопи">
+          <div attr-region="Родопи">
           <div class="panel panel-default" id="Хижа Аида">
             <div class="panel-body">
               <div class="row">
@@ -214,7 +215,7 @@
             </div>
           </div>
 
-          <div class="Родопи">
+
           <div class="panel panel-default" id="Хижа Белите Брези">
             <div class="panel-body">
               <div class="row">
@@ -232,7 +233,6 @@
             </div>
           </div>
 
-          <div class="Родопи">
           <div class="panel panel-default" id="Хижа Безово">
             <div class="panel-body">
               <div class="row">
@@ -252,8 +252,10 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="Стара планина">
+
+          <div attr-region="Стара планина">
           <div class="panel panel-default" id="Хижа Бачо Киро">
             <div class="panel-body">
               <div class="row">
@@ -289,9 +291,13 @@
                 </div>
               </div>
             </div>
-          </div>
+</div>
+</div>
+</div>
 
-          <div class="Рила">
+
+
+          <div attr-region="Рила">
           <div class="panel panel-default" id="Хижа Мальовица">
             <div class="panel-body">
               <div class="row">
@@ -309,7 +315,6 @@
             </div>
           </div>
 
-          <div class="Рила">
           <div class="panel panel-default" id="Хижа Отовица">
             <div class="panel-body">
               <div class="row">
@@ -328,7 +333,6 @@
             </div>
           </div>
 
-          <div class="Рила">
           <div class="panel panel-default" id="Хижа Пионерска">
             <div class="panel-body">
               <div class="row">
@@ -352,6 +356,20 @@
       </div>
     </div>
   </body>
+
+  <script type="text/javascript">
+  $(function() {
+      $('#sel1').on('change', function(e){
+          var region = $(this).val();
+          $('[attr-region]').addClass('hidden');
+          $('[attr-region="'+region+'"]').removeClass('hidden');
+          if (region==""){
+            $('[attr-region]').removeClass('hidden');
+          }
+      });
+  });
+  </script>
+
 
   <footer class="footer">
       <div class="container">

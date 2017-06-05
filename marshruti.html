@@ -86,10 +86,10 @@
               <div class="form-group">
                 <select class="form-control" id="sel1">
                   <option value="">Избери регион</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
+                  <option>Пирин</option>
+                  <option>Рила</option>
+                  <option>Родопи</option>
+                  <option>Стара планина</option>
                 </select>
               </div>
             </div>
@@ -258,6 +258,19 @@
       </div>
     </div>
   </body>
+
+<script type="text/javascript">
+$(function() {
+    $('#sel1').on('change', function(e){
+        var region = $(this).val();
+        $('div.panel-default').addClass('hidden');
+        $('[attr-region="'+region+'"]').removeClass('hidden');
+        if (region==""){
+          $('[attr-region]').removeClass('hidden');
+        }
+    });
+});
+</script>
 
   <footer class="footer">
       <div class="container">
