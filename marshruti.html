@@ -20,28 +20,17 @@
 
 
               <script>
-            function myFunction() {
-
-               var input, filter, id, h3;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                var same = document.getElementsByClassName("panel panel-default");
-                var i;
-                for (i = 0; i < same.length; i++) {
-                  h3 = same[i].getElementsByTagName("h3")[0];
-
-                    var x = h3.innerHTML.toUpperCase();
-                    id = document.getElementById(h3.innerHTML);
-
-                    if (h3.innerHTML.toUpperCase().indexOf(filter) > -1) {
-
-                  //h2 = document.getElementsByTagName("h2")[0];
-                        id.style.display="";
-                    } else {
-                        id.style.display="none";
-                    }
-                }
-            }
+              function myFunction() {
+                 var input, filter, id, h3;
+                  input = document.getElementById("myInput");
+                  filter = input.value;
+                  $(".panel-default").hide();
+                  $(".panel-default").each(function(index,item){
+                      if (~item.id.indexOf(filter)) {
+                        $(item).show();
+                      }
+                  });
+              }
 
 
             </script>
